@@ -452,13 +452,16 @@ p {
   position: absolute;
   top: 8px;
   right: 8px;
-  border: 1px solid #000;
-  border-radius: 50%;
-}
-.close-modal-icon {
   width: 30px;
   height: 30px;
-  fill: var(--accent-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.close-modal-icon {
+  width: 18px;
+  height: 18px;
+  fill: #000;
 }
 /* portfolio */
 .btns-portfolio {
