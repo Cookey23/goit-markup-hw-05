@@ -469,8 +469,9 @@ p {
 }
 
 .btn-close-modal {
-  display: block;
-  margin-left: auto;
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
