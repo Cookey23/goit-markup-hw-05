@@ -5,6 +5,7 @@
   --accent-color: #2196f3;
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #2f303a;
+  --primary-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
@@ -75,6 +76,7 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+  transition: color 250ms var(--primary-cubic);
 }
 .site-nav .link.current::after {
   position: absolute;
@@ -106,12 +108,14 @@ p {
   line-height: 1.14px;
   text-decoration: none;
   color: var(--primary-text-color);
+  transition: color 250ms var(--primary-cubic);
 }
 .header-contact .contact-icon {
   margin-right: 10px;
   width: 16px;
   height: 16px;
   fill: var(--primary-text-color);
+  transition: fill 250ms var(--primary-cubic);
 }
 
 .header-contact .contacts:hover,
@@ -160,6 +164,8 @@ p {
   letter-spacing: 0.06em;
   background-color: var(--accent-color);
   color: var(--primary-bg-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: color 250ms var(--primary-cubic), background-color 250ms var(--primary-cubic);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -294,6 +300,7 @@ p {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color 250ms var(--primary-cubic);
 }
 .team .social-item:not(:last-child) {
   margin-right: 10px;
@@ -302,6 +309,7 @@ p {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+  transition: fill 250ms var(--primary-cubic);
 }
 .team .social-link:hover,
 .team .social-link:focus {
@@ -324,6 +332,7 @@ p {
   align-items: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border-color 250ms var(--primary-cubic);
 }
 .partners-list .item:not(:last-child) {
   margin-right: 30px;
@@ -332,6 +341,7 @@ p {
   width: 106px;
   height: 60px;
   fill: #afb1b8;
+  transition: fill 250ms var(--primary-cubic);
 }
 .partners-list .link:hover,
 .partners-list .link:focus {
@@ -377,6 +387,7 @@ p {
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition: color 250ms var(--primary-cubic);
 }
 
 .address .street {
@@ -415,6 +426,7 @@ p {
   align-items: center;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms var(--primary-cubic);
 }
 .footer-social .icon {
   width: 20px;
@@ -433,24 +445,32 @@ p {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 300ms var(--primary-cubic);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  padding: 8px;
   background-color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 300ms var(--primary-cubic);
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
 .btn-close-modal {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  display: block;
+  margin-left: auto;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -458,10 +478,11 @@ p {
   background-color: #fff;
 }
 .close-modal-icon {
-  width: 18px;
-  height: 18px;
+  width: 11px;
+  height: 11px;
   fill: #000;
 }
+
 /* portfolio */
 .btns-portfolio {
   display: flex;
@@ -480,6 +501,8 @@ p {
   letter-spacing: 0.03em;
   cursor: pointer;
   color: var(--title-text-color);
+  transition: background-color 250ms var(--primary-cubic), color 250ms var(--primary-cubic),
+    box-shadow 250ms var(--primary-cubic);
 }
 
 .btns-portfolio .item:not(:last-child) {
@@ -503,6 +526,7 @@ p {
 .work-examples .link {
   display: block;
   text-decoration: none;
+  transition: box-shadow 250ms var(--primary-cubic);
 }
 .work-examples .overlay-zone {
   position: relative;
@@ -516,7 +540,7 @@ p {
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 600ms ease;
+  transition: transform 250ms var(--primary-cubic);
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
 }
